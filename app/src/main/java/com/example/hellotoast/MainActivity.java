@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("CHECK_ACTIVITY", "onCreate");
         setContentView(R.layout.activity_main);
         numberCount = findViewById(R.id.numberCount);
         countButton = findViewById(R.id.count);
@@ -30,6 +32,41 @@ public class MainActivity extends AppCompatActivity {
         countButton.setOnClickListener(l -> count());
         toastButton.setOnClickListener(l -> navigate());
         sendButton.setOnClickListener(l -> send());
+        snrButton.setOnClickListener(l -> snr());
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("CHECK_ACTIVITY", "onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("CHECK_ACTIVITY", "onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("CHECK_ACTIVITY", "onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("CHECK_ACTIVITY", "onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("CHECK_ACTIVITY", "onDestroy");
+    }
+
+    private void snr() {
 
     }
 

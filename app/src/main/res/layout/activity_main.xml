@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2196F3"
+    android:background="#9C27B0"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="75dp"
         android:layout_marginBottom="16dp"
         android:orientation="horizontal"
-        android:paddingHorizontal="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -23,7 +22,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="#F44336"
+            android:backgroundTint="#4CAF50"
             android:text="Count"
             android:textColor="#FFFFFF" />
 
@@ -32,7 +31,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="#F44336"
+            android:backgroundTint="#4CAF50"
             android:text="Navigate"
             android:textColor="#FFFFFF" />
 
@@ -41,7 +40,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="#F44336"
+            android:backgroundTint="#4CAF50"
             android:text="Send"
             android:textColor="#FFFFFF" />
 
@@ -50,7 +49,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:backgroundTint="#F44336"
+            android:backgroundTint="#4CAF50"
             android:text="SeR"
             android:textColor="#FFFFFF" />
 
@@ -62,7 +61,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:background="#2196F3"
+        android:background="#9C27B0"
         android:gravity="center"
         android:text="0"
         android:textColor="#FFFFFF"
@@ -77,9 +76,8 @@
         android:layout_width="match_parent"
         android:layout_height="72dp"
         android:layout_marginTop="16dp"
-        android:background="#F44336"
-        android:gravity="center_vertical"
-        android:paddingStart="16dp"
+        android:background="#4CAF50"
+        android:gravity="center"
         android:text="Hello World!"
         android:textColor="#FFFFFF"
         android:textSize="48sp"
