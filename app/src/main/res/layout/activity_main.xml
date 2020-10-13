@@ -44,6 +44,15 @@
             android:text="Send"
             android:textColor="#FFFFFF" />
 
+        <Button
+            android:id="@+id/snr"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="#4CAF50"
+            android:text="SnR"
+            android:textColor="#FFFFFF" />
+
     </LinearLayout>
 
     <TextView

@@ -2,6 +2,7 @@ package com.example.hellotoast;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
@@ -15,8 +16,8 @@ public class MainActivity extends AppCompatActivity {
     private Button countButton;
     private Button toastButton;
     private Button sendButton;
-  //  private Button snrButton;
-    private String value="a";
+    private Button snrButton;
+    private String value = "a";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,31 +29,41 @@ public class MainActivity extends AppCompatActivity {
         countButton = findViewById(R.id.count);
         toastButton = findViewById(R.id.toast);
         sendButton = findViewById(R.id.send);
-      //  snrButton = findViewById(R.id.snr);
+        snrButton = findViewById(R.id.snr);
         countButton.setOnClickListener(l -> count());
         toastButton.setOnClickListener(l -> navigate());
         sendButton.setOnClickListener(l -> send());
-//        snrButton.setOnClickListener(l -> {});
+        snrButton.setOnClickListener( l ->{});
+           /* value = getIntent().getExtras().getString("namePerson");
+            namePerson.setText(value);*/
+
+
+//        String ab = getIntent().getExtras().getString("namePerson");
 
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d("CHECK_ACTIVITY", "onStart: "+value);
-       // value = getIntent().getExtras().getString("namePerson");
-
-    }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode == RESULT_OK) {
-            if(data != null) {
-                 namePerson.setText(data.getStringExtra("namePerson"));
+        if(requestCode == 1) {
+                if (resultCode == RESULT_OK) {
+                    value = data.getStringExtra("namePerson");
+                    // TODO Update your TextView.
+                    namePerson.setText(value);
+                    Log.d("RETURN", "Value: "+value);
+
             }
         }
     }
-/*
+
+
+@Override
+    protected void onStart() {
+        super.onStart();
+
+        Log.d("CHECK_ACTIVITY", "onStart: "+value);
+    }
+    /*
     @Override
     protected void onResume() {
         super.onResume();
@@ -80,13 +91,13 @@ public class MainActivity extends AppCompatActivity {
     private void send() {
         Intent intent = new Intent(MainActivity.this, SecondActivity.class);
         intent.putExtra("CountedNumber", numberCount.getText().toString());
-        startActivity(intent);
+        startActivityForResult(intent, 1);
     }
 
     private void navigate() {
         Toast.makeText(MainActivity.this, "You clicked: " + numberCount.getText().toString(), Toast.LENGTH_LONG).show();
         Intent intent = new Intent(MainActivity.this, ThirdActivity.class);
-        startActivityForResult(intent, RESULT_OK);
+        startActivity(intent);
     }
 
     private void count() {
